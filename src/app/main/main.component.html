@@ -1,0 +1,41 @@
+
+<mat-toolbar color="primary">
+  <button mat-icon-button aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Nuzlocke Tracker</span>
+  <span class="spacer"></span>
+  <button mat-icon-button aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+<div id="page-content-container">
+  <div id="page-content">
+    <div class="page-item">
+      <mat-form-field appearance="fill" class="w-50">
+        <mat-label>Select Region</mat-label>
+        <mat-select [(ngModel)]="selectedRegion">
+          <mat-option *ngFor="let region of regions" [value]="region">
+            {{ region }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="page-item">
+      <mat-divider class="w-75"></mat-divider>
+    </div>
+    <div class="page-item">
+      <button
+        mat-fab
+        matTooltip="Start Nuzlocke!"
+        [disabled]="selectedRegion == 'Shorts!'"
+        (click)="newNuzlocke(selectedRegion)"
+      >
+        <mat-icon aria-label="Start Nuzlocke!">east</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
