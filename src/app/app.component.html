@@ -11,3 +11,11 @@
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
+<mat-form-field appearance="fill" class="w-50">
+  <mat-select>
+    <mat-option *ngFor="let region of regions" [value]="region">
+      {{ region }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
